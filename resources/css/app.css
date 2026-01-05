@@ -1,0 +1,90 @@
+@import 'tailwindcss';
+
+
+@source '../../vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php';
+@source '../../storage/framework/views/*.php';
+@source '../**/*.blade.php';
+@source '../**/*.js';
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@theme {
+    --font-sans: 'Instrument Sans', ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
+        'Segoe UI Symbol', 'Noto Color Emoji';
+}
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+@keyframes slideUp {
+  from { opacity: 0; transform: translateY(40px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.animate-fadeIn { animation: fadeIn 1s ease-out forwards; }
+.animate-slideUp { animation: slideUp 1.2s ease-out forwards; }
+.shadow-smooth {
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+}
+.reveal-up {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 1s ease-out;
+}
+.reveal.active .reveal-up {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Hiệu ứng cho bản đồ */
+.reveal-map {
+  opacity: 0;
+  transform: scale(0.95);
+  transition: all 1.2s ease-out;
+}
+.reveal.active .reveal-map {
+  opacity: 1;
+  transform: scale(1);
+}
+/* Hiệu ứng Reveal chung */
+.reveal-up {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 1s ease-out;
+}
+.reveal.active .reveal-up {
+  opacity: 1;
+  transform: translateY(0);
+}
+.anim-delay-150 { transition-delay: .15s; }
+.anim-delay-300 { transition-delay: .3s; }
+.anim-delay-400 { transition-delay: .45s; }
+
+/* Footer reveal */
+footer.reveal {
+  opacity: 0;
+  transform: translateY(50px);
+  transition: all 1.5s ease-out;
+}
+footer.reveal.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+    #mainImage {
+        transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
+    }
+
+    #mainImage.fade {
+        opacity: 0.5;
+        transform: scale(0.98);
+    }
+
+    .thumb {
+        transition: all 0.25s ease-in-out;
+    }
+
+    .thumb.active {
+        border-color: #a855f7; /* tím đậm */
+        transform: scale(1.05);
+    }
+
